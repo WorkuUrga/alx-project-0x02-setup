@@ -1,4 +1,4 @@
-import { ButtonProps } from '../../interfaces';
+import { type ButtonProps } from '../../interfaces';
 
 const Button = ({ size, shape, children }: ButtonProps & { children: React.ReactNode }) => (
   <button className={`${size} ${shape}`}>

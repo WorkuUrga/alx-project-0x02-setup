@@ -12,10 +12,12 @@ const PostModal = ({ onClose, onSubmit }) => {
   return (
     <div>
       <h2>Add Post</h2>
+      <form action="">
       <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
       <textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder="Content" />
       <button onClick={handleSubmit}>Submit</button>
       <button onClick={onClose}>Close</button>
+      </form>
     </div>
   );
 };
