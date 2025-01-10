@@ -1,6 +1,6 @@
 import Header from '@/components/layout/Header';
-import PostCard from '@/components/common/PostCard'; // Ensure you have this component
-import { PostProps } from '@/interfaces'; // Make sure PostProps interface is defined
+import PostCard from '@/components/common/PostCard'; 
+import { PostProps } from '@/interfaces';
 
 const PostsPage = ({ posts }: { posts: PostProps[] }) => {
   return (
@@ -16,7 +16,6 @@ const PostsPage = ({ posts }: { posts: PostProps[] }) => {
   );
 };
 
-// Fetch data using getStaticProps
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const posts: PostProps[] = await res.json();
