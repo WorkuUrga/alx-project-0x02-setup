@@ -1,6 +1,6 @@
 import Header from '@/components/layout/Header';
-import UserCard from '@/components/common/UserCard'; // Ensure you have this component
-import { UserProps } from '@/interfaces'; // Make sure UserProps interface is defined
+import UserCard from '@/components/common/UserCard';
+import { UserProps } from '@/interfaces';
 
 const UsersPage = ({ users }: { users: UserProps[] }) => {
   return (
@@ -13,7 +13,7 @@ const UsersPage = ({ users }: { users: UserProps[] }) => {
             key={user.id}
             name={user.name}
             email={user.email}
-            address={user.address.street + ', ' + user.address.city}
+            address={`${user.address.street}, ${user.address.city}`}
           />
         ))}
       </div>
@@ -21,7 +21,7 @@ const UsersPage = ({ users }: { users: UserProps[] }) => {
   );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps() = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const users: UserProps[] = await res.json();
 
